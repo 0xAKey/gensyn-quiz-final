@@ -1,0 +1,53 @@
+:root {
+  --bg: #04060a;
+  --neon: #00ffff;
+  --neon2: #0088ff;
+  --muted: #9aa4b2;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--neon);
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  max-width: 600px;
+  padding: 2rem;
+}
+
+.card {
+  background: rgba(0, 255, 255, 0.05);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+}
+
+button {
+  margin: 0.3rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background: linear-gradient(90deg, var(--neon), var(--neon2));
+  color: #000;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px var(--neon2);
+}
+
+.footer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 1rem;
+}
