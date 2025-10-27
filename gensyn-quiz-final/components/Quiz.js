@@ -15,13 +15,30 @@ const questions = [
 
 export default function Quiz() {
   const [i, setI] = useState(0);
+  const [finished, setFinished] = useState(false);
+
+  const nextQuestion = () => {
+    if (i < questions.length - 1) setI(i + 1);
+    else setFinished(true);
+  };
+
+  if (finished) {
+    return (
+      <div className="quiz">
+        <h2>🎉 Quiz complete!</h2>
+        <p>You’ve proven your Gensyn knowledge. 🧠</p>
+      </div>
+    );
+  }
 
   return (
     <div className="quiz">
       <h2>{questions[i].q}</h2>
       <div className="options">
         {questions[i].a.map((opt, idx) => (
-          <button key={idx}>{opt}</button>
+          <button key={idx} onClick={nextQuestion}>
+            {opt}
+          </button>
         ))}
       </div>
       <div className="progress">Question {i + 1} / {questions.length}</div>
